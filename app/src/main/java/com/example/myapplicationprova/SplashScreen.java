@@ -36,7 +36,7 @@ public class SplashScreen extends AppCompatActivity {
 
         imageLogo.setAnimation(animation);
 
-        new Handler().postAtTime(new Runnable() {
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
 
