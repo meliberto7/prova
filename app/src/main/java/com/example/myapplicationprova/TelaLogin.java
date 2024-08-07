@@ -51,6 +51,15 @@ public class TelaLogin extends AppCompatActivity {
             }
         });
 
+        buttonCadastro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                irTelaCadastro();
+
+            }
+        });
+
     }
 
     @SuppressLint("ResourceAsColor")
@@ -61,7 +70,7 @@ public class TelaLogin extends AppCompatActivity {
 
         if (usuario.equals("admin") && senha.equals("admin")) {
 
-            irTelaCadastro();
+            irTelaPrincipal();
             very = 0;
 
         } else {
@@ -92,7 +101,16 @@ public class TelaLogin extends AppCompatActivity {
         finish();
 
     }
+    private void irTelaPrincipal() {
+
+        Intent intent = new Intent(TelaLogin.this, TelaPrincipal.class);
+        startActivity(intent);
+        finish();
+
+    }
     private void bloqueia() {
+
+        very = 0;
 
         Toast.makeText(TelaLogin.this, "Login bloqueado: aguarde 30s!", Toast.LENGTH_SHORT).show();
 
