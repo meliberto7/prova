@@ -1,6 +1,8 @@
 package com.example.myapplicationprova;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.ImageView;
@@ -34,5 +36,23 @@ public class SplashScreen extends AppCompatActivity {
 
         imageLogo.setAnimation(animation);
 
+        new Handler().postAtTime(new Runnable() {
+            @Override
+            public void run() {
+
+                irTelaLogin();
+
+            }
+        }, 3000);
+
     }
+
+    private void irTelaLogin() {
+
+        Intent intent = new Intent(SplashScreen.this, TelaLogin.class);
+        startActivity(intent);
+        finish();
+
+    }
+
 }
